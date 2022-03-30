@@ -2,7 +2,11 @@ import React from "react";
 
 const CommunitySection = () => {
   return (
-    <div id="community" className="section__padding">
+    <div
+      id="community"
+      className="section__padding"
+      style={{ backgroundColor: "salmon" }}
+    >
       <h2 className="section__title">Meet Our Community</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas,

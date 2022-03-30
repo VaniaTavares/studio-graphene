@@ -2,7 +2,11 @@ import React from "react";
 
 const LocationSection = () => {
   return (
-    <div id="location" className="section__padding">
+    <div
+      id="location"
+      className="section__padding"
+      style={{ backgroundColor: "lime" }}
+    >
       <h2 className="section__title">Our Location</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas,
