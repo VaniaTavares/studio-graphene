@@ -12,4 +12,5 @@
   color: var(--color-gray);
   font-family: (--font-title);
   font-weight: 600;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }

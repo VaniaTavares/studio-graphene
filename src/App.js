@@ -7,6 +7,8 @@ import {
   PopularRecipesSection,
 } from "./Sections";
 import Navigation from "./Components/Navigation";
+import "./App.css";
+
 const App = () => {
   return (
     <div className="App">

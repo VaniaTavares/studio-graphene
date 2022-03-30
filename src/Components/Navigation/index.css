@@ -3,28 +3,96 @@
   width: 100vw;
   height: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2vh 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 2vh 0 2vh 1.5vw;
+  background: none;
+  color: var(--color-darker-grey);
 }
 
 .app__navigation-links {
+  display: none;
+}
+.app__navigation__small-screen {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
 }
 
-.app__navigation-links a {
+.app__navbar-smallscreen_links {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  bottom: -45vh;
+}
+
+.app__navbar-smallscreen_links li,
+.app__navigation-links li {
+  cursor: pointer;
+}
+
+.app__navigation-links a,
+.app__navbar-smallscreen_links a {
   text-decoration: none;
   margin: 0.5rem;
-  color: rgb(73, 73, 73);
+  color: inherit;
+  font-size: var(--font-size-base);
+}
+
+.app__navbar-smallscreen_links a {
+  line-height: 2.1rem;
+}
+
+.app__navigation__small-screen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 194, 80, 0.95);
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+  animation: overlay 500ms ease-out;
+}
+
+.app__navigation__small-screen-overlay .overlay__close {
+  position: absolute;
+  bottom: 10vh;
+  left: calc(50vw - 13.5px);
+  cursor: pointer;
+}
+
+@keyframes overlay {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media screen and (min-width: 600px) {
   .app__navigation {
-    flex-direction: row;
-    justify-content: flex-start;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgba(255, 255, 255, 0.31);
+  }
+  .app__navigation-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+
+  .app__navigation__small-screen {
+    display: none;
+  }
+
+  .app__navigation-links a {
+    font-size: 1.1rem;
   }
 }

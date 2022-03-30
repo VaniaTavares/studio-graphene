@@ -4,7 +4,12 @@
   --font-title: "Cormorant Upright", serif;
   --font-base: "Montserrat", sans-serif;
 
-  --color-gray: #414141;
+  --font-size-base: 1.25rem;
+  --font-size-paragraph: 0.9rem;
+
+  --color-gray: rgb(65, 65, 65);
+  --color-black: rgb(0, 0, 0);
+  --color-darker-grey: rgb(73, 73, 73);
 }
 
 * {
