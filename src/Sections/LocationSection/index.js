@@ -2,7 +2,7 @@ import React from "react";
 
 const LocationSection = () => {
   return (
-    <div
+    <section
       id="location"
       className="section__padding"
       style={{ backgroundColor: "lime" }}
@@ -13,7 +13,7 @@ const LocationSection = () => {
         reprehenderit quis quibusdam rem totam eos expedita maxime sint
         voluptatum, numquam tempore exercitationem?
       </p>
-    </div>
+    </section>
   );
 };
 

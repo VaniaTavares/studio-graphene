@@ -2,7 +2,7 @@ import React from "react";
 
 const CommunitySection = () => {
   return (
-    <div
+    <section
       id="community"
       className="section__padding"
       style={{ backgroundColor: "salmon" }}
@@ -13,7 +13,7 @@ const CommunitySection = () => {
         reprehenderit quis quibusdam rem totam eos expedita maxime sint
         voluptatum, numquam tempore exercitationem?
       </p>
-    </div>
+    </section>
   );
 };
 

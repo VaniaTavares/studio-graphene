@@ -2,7 +2,7 @@ import React from "react";
 
 const MenuSection = () => {
   return (
-    <div
+    <section
       id="menu"
       className="section__padding"
       style={{ backgroundColor: "salmon" }}
@@ -13,7 +13,7 @@ const MenuSection = () => {
         reprehenderit quis quibusdam rem totam eos expedita maxime sint
         voluptatum, numquam tempore exercitationem?
       </p>
-    </div>
+    </section>
   );
 };
 

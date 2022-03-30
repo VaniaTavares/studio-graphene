@@ -6,13 +6,14 @@ import {
   MenuSection,
   PopularRecipesSection,
 } from "./Sections";
-import Navigation from "./Components/Navigation";
+import { Navigation, SectionTracker } from "./Components";
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
       <Navigation />
+      <SectionTracker />
       <LandingSection />
       <CommunitySection />
       <LocationSection />

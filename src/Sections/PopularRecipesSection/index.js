@@ -2,7 +2,7 @@ import React from "react";
 
 const PopularRecipesSection = () => {
   return (
-    <div
+    <section
       id="popular-recipes"
       className="section__padding"
       style={{ backgroundColor: "yellow" }}
@@ -13,7 +13,7 @@ const PopularRecipesSection = () => {
         reprehenderit quis quibusdam rem totam eos expedita maxime sint
         voluptatum, numquam tempore exercitationem?
       </p>
-    </div>
+    </section>
   );
 };
 
