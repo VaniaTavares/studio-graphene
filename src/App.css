@@ -1,5 +1,6 @@
 .section__padding {
-  padding: 5vh 1rem 0 1rem;
+  padding: 8vh 1rem 0 1rem;
+  height: 100vh;
 }
 
 .flex__center {

@@ -7,7 +7,8 @@
   justify-content: flex-start;
   padding: 2vh 0 2vh 1.5vw;
   background: none;
-  color: var(--color-darker-grey);
+  color: var(--color-white);
+  z-index: 2;
 }
 
 .app__navigation-links {
@@ -38,6 +39,7 @@
   margin: 0.5rem;
   color: inherit;
   font-size: var(--font-size-base);
+  font: 600 var(--font-size-base) var(--font-base);
 }
 
 .app__navbar-smallscreen_links a {
@@ -73,13 +75,12 @@
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 650px) {
   .app__navigation {
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
-    border: 1px solid rgba(255, 255, 255, 0.31);
   }
   .app__navigation-links {
     display: flex;
@@ -90,9 +91,5 @@
 
   .app__navigation__small-screen {
     display: none;
-  }
-
-  .app__navigation-links a {
-    font-size: 1.1rem;
   }
 }

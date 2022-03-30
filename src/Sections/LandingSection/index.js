@@ -1,14 +1,12 @@
 import React from "react";
 
+import images from "../../Constants/Images";
+import "./index.css";
 const LandingSection = () => {
   return (
-    <div id="home" className="section__padding landing">
-      <h2>Home</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas,
-        reprehenderit quis quibusdam rem totam eos expedita maxime sint
-        voluptatum, numquam tempore exercitationem?
-      </p>
+    <div id="home" className="app__home flex__center">
+      <h2>Welcome to Our Food Experience</h2>
+      <img src={images.home} alt="main image" />
     </div>
   );
 };
