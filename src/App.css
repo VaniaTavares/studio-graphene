@@ -1,0 +1,15 @@
+.section__padding {
+  padding: 5vh 1rem 0 1rem;
+}
+
+.flex__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__title {
+  color: var(--color-gray);
+  font-family: (--font-title);
+  font-weight: 600;
+}

@@ -1,12 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@600&family=Montserrat:wght@300;600;700&display=swap");
+
+:root {
+  --font-title: "Cormorant Upright", serif;
+  --font-base: "Montserrat", sans-serif;
+
+  --color-gray: #414141;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: Mont;
 }
 
 body {
-  padding: 0 1rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -17,8 +26,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.section__padding {
-  padding-top: 5vh;
 }
