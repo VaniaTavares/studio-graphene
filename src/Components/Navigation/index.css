@@ -1,0 +1,30 @@
+.app__navigation {
+  position: fixed;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh 0;
+}
+
+.app__navigation-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.app__navigation-links a {
+  text-decoration: none;
+  margin: 0.5rem;
+  color: rgb(73, 73, 73);
+}
+
+@media screen and (min-width: 600px) {
+  .app__navigation {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
