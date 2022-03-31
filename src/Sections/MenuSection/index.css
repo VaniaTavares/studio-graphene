@@ -1,0 +1,38 @@
+.app__menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.app__menu-column {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  max-width: 200px;
+  border-inline-end: 1.5px solid var(--color-darker-grey);
+  height: 100%;
+}
+
+.app__menu-column_card {
+  flex-direction: column;
+  width: 100%;
+}
+
+.app__menu-column_card p {
+  overflow-wrap: break-word;
+  width: 90%;
+  padding-inline-start: 0.5rem;
+}
+
+.app__menu-column_card span {
+  padding: 0.25rem;
+  border: 1px solid var(--color-purple);
+}
+
+@media screen and (min-width: 1000px) {
+  .app__menu {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}

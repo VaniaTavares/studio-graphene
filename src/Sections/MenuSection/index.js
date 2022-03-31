@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import "./index.css";
 const Menu = ({ title, description, price }) => {
   return (
-    <div style={{ flexDirection: "column" }} className="flex__center">
+    <div className="app__menu-column_card flex__center">
       <h4>{title}</h4>
-      <p style={{ overflowWrap: "break-word" }}>{description}</p>
-      <span style={{ border: "1px solid black", padding: "0.25rem" }}>
-        {price}
-      </span>
+      <p>{description}</p>
+      <span>{price}</span>
     </div>
   );
 };
@@ -35,29 +34,15 @@ const MenuSection = () => {
 
     return () => controller.abort();
   }, []);
-  console.table(menus);
-  console.table(types);
+
   return (
-    <section
-      id="menu"
-      className="section__padding"
-      style={{ backgroundColor: "salmon" }}
-    >
+    <section id="menu" className="flex__center section__padding">
       <h2 className="section__title">Our Menu</h2>
-      <div style={{ flexDirection: "row" }} className="flex__around">
+      <div className="app__menu flex__center">
         {types.length &&
           types.map((type) => (
-            <div
-              key={type}
-              style={{
-                flexDirection: "column",
-                width: "20vw",
-                borderInlineEnd: "2px solid black",
-                height: "100%",
-              }}
-              className="flex__around"
-            >
-              <h3>{type.split("_").join(" ").toUpperCase()}</h3>
+            <div key={type} className="app__menu-column">
+              <h3 className="section__subtitle">{type.split("_").join(" ")}</h3>
               {menus
                 .filter((menu) => menu.type === type)
                 .map((menu) => (

@@ -1,26 +1,26 @@
 .app__section-tracker {
   position: fixed;
   height: max-content;
-  top: 35vh;
-  left: 1vw;
+  top: 30vh;
+  left: 2vw;
 }
 
-.app__section-tracker div {
+.app__section-tracker_row {
   position: relative;
-  max-width: 50px;
+  width: 50px;
 }
 
 .line {
   height: 1px;
-  width: 45%;
   background-color: var(--color-darker-grey);
   position: absolute;
   top: 50%;
+  width: 45%;
 }
 
 .p__section__active {
-  padding-left: 0.25rem;
   color: var(--color-darker-grey);
+  font-size: 0.75rem;
 }
 
 .p__section__inactive {

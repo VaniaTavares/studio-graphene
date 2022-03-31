@@ -12,7 +12,7 @@ import "./App.css";
 const options = {
   root: null,
   rootMargin: "0px",
-  threshold: 0.6,
+  threshold: 0.8,
 };
 
 const App = () => {
@@ -27,7 +27,6 @@ const App = () => {
   };
 
   useEffect(() => {
-    // const observer = new IntersectionObserver(intersectionCallBack, options);
     const { current } = containerRef;
     if (current) {
       setSectionsToWatch((prevSet) => [

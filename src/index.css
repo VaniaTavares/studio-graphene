@@ -11,13 +11,20 @@
   --color-black: rgb(0, 0, 0);
   --color-darker-grey: rgb(73, 73, 73);
   --color-white: rgb(255, 255, 255);
+  --color-purple: rgb(150, 43, 71);
+  --color-dark-red: rgb(119, 30, 33);
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {

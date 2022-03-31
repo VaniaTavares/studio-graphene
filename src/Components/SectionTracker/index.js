@@ -8,7 +8,7 @@ const SectionTracker = ({ tracker }) => {
   return (
     <div className="app__section-tracker">
       {treated.map((link) => (
-        <div key={link.id}>
+        <div key={link.id} className="app__section-tracker_row">
           <p
             className={
               tracker === link.refLink
