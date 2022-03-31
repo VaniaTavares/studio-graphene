@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const MenuSection = () => {
+  // const [menus, setMenus] = useState([]);
+  console.log(process.env.REACT_APP_GRAPHENE_API);
+  useEffect(() => {
+    const controller = new AbortController();
+    axios
+      .get(`https://studiographene-exercise-api.herokuapp.com/foods`, {
+        signal: controller.signal,
+      })
+      .then((res) => {
+        console.table(res.data);
+      })
+      .catch((err) => {
+        if (axios.isCancel()) return;
+        else console.error(err);
+      });
+
+    return () => controller.abort();
+  }, []);
+
   return (
     <section
       id="menu"
