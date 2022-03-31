@@ -1,6 +1,6 @@
 .section__padding {
   scroll-margin-top: 7.5vh;
-  padding: 1rem 1rem 0 2.5rem;
+  padding: 1rem 1rem 0 5rem;
   height: 92.5vh;
 }
 
@@ -9,10 +9,30 @@
   justify-content: center;
   align-items: center;
 }
-
 .section__title {
   color: var(--color-gray);
   font-family: (--font-title);
   font-weight: 600;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.line {
+  height: 1px;
+  width: 45%;
+  background-color: var(--color-darker-grey);
+  position: absolute;
+  top: 50%;
+}
+
+.p__section__active {
+  padding-left: 0.25rem;
+  color: var(--color-darker-grey);
+}
+
+.p__section__inactive {
+  color: transparent;
+}
+
+.section__active {
+  width: 75%;
 }

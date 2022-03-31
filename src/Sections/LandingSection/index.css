@@ -1,7 +1,7 @@
 .app__home {
   color: var(--color-white);
   width: 100vw;
-  height: clamp(290px, 30vh, 450px);
+  height: clamp(290px, 70vh, 600px);
   position: relative;
 }
 
