@@ -9,6 +9,13 @@
   justify-content: center;
   align-items: center;
 }
+
+.flex__around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .section__title {
   color: var(--color-gray);
   font-family: (--font-title);
