@@ -1,17 +1,14 @@
 import React from "react";
 
 import { navbarLinks } from "../../Constants/NavLinks";
-
+import "./index.css";
 const treated = [...navbarLinks];
 treated.shift();
 const SectionTracker = ({ tracker }) => {
   return (
-    <div
-      className="app__section-tracker"
-      style={{ height: "300px", position: "fixed", top: "50vh", left: "1vw" }}
-    >
+    <div className="app__section-tracker">
       {treated.map((link) => (
-        <div key={link.id} style={{ width: "50px", position: "relative" }}>
+        <div key={link.id}>
           <p
             className={
               tracker === link.refLink

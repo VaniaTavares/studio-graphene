@@ -1,0 +1,32 @@
+.app__section-tracker {
+  position: fixed;
+  height: max-content;
+  top: 35vh;
+  left: 1vw;
+}
+
+.app__section-tracker div {
+  position: relative;
+  max-width: 50px;
+}
+
+.line {
+  height: 1px;
+  width: 45%;
+  background-color: var(--color-darker-grey);
+  position: absolute;
+  top: 50%;
+}
+
+.p__section__active {
+  padding-left: 0.25rem;
+  color: var(--color-darker-grey);
+}
+
+.p__section__inactive {
+  color: transparent;
+}
+
+.section__active {
+  width: 75%;
+}
