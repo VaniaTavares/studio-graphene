@@ -1,7 +1,9 @@
 .app__loading {
-  width: clamp(100px, 30%, 250px);
-  height: clamp(100px, 30%, 250px);
+  width: clamp(100px, 30%, 350px);
+  height: clamp(100px, 30%, 350px);
   margin: 0 auto;
+  z-index: 20;
+  position: relative;
 }
 
 .app__loading > img {

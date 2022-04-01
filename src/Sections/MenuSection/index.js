@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useQuery, QueryClient, QueryClientProvider } from "react-query";
 import axios from "axios";
-import { MenuColumn, Loading, DisplayErrorMessage } from "../../Components";
+import { MenuColumn, DisplayErrorMessage, Loading } from "../../Components";
 import "./index.css";
 const fetchMenus = () => {
   return axios.get(`${process.env.REACT_APP_GRAPHENE_API}`);
@@ -20,18 +20,15 @@ const MenuSection = () => {
       setOffsetY(newValue / 2);
     }
   };
-  console.log(menuRef);
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const { isLoading, data, error } = useQuery("menus", fetchMenus, {
+  const { data, error, isLoading } = useQuery("menus", fetchMenus, {
     cacheTime: 3600000,
   });
-
-  if (isLoading) return <Loading />;
-  else if (error) return <DisplayErrorMessage />;
 
   return (
     <section
@@ -40,18 +37,28 @@ const MenuSection = () => {
       style={{ position: "relative", overflow: "auto" }}
       ref={menuRef}
     >
-      <h2 className="section__title">Our Menu</h2>
-      <div className="app__menu__container">
-        {[...new Set(data.data.map((menu) => menu.type))].map((type, index) => (
-          <MenuColumn
-            index={index}
-            type={type}
-            key={type}
-            menus={data.data}
-            offsetY={offsetY}
-          />
-        ))}
-      </div>
+      {isLoading ? (
+        <Loading />
+      ) : error ? (
+        <DisplayErrorMessage />
+      ) : (
+        <>
+          <h2 className="section__title">Our Menu</h2>
+          <div className="app__menu__container">
+            {[...new Set(data.data.map((menu) => menu.type))].map(
+              (type, index) => (
+                <MenuColumn
+                  index={index}
+                  type={type}
+                  key={type}
+                  menus={data.data}
+                  offsetY={offsetY}
+                />
+              )
+            )}
+          </div>
+        </>
+      )}
     </section>
   );
 };

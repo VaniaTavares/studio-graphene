@@ -1,28 +1,33 @@
-import React, { useRef, lazy, Suspense } from "react";
-import { CommunitySection, LandingSection, LocationSection } from "./Sections";
-import { Navigation, SectionTracker, Loading } from "./Components";
+import React, { useRef, useEffect, useState } from "react";
+import {
+  CommunitySection,
+  LandingSection,
+  LocationSection,
+  MenuSection,
+  PopularRecipesSection,
+} from "./Sections";
+import { Loading, Navigation, SectionTracker } from "./Components";
 import useObserver from "./Constants and Functions/useObserver";
 import "./App.css";
-const MenuSection = lazy(() => import("./Sections/MenuSection"));
-const PopularRecipesSection = lazy(() =>
-  import("./Sections/PopularRecipesSection")
-);
+
 const App = () => {
   const containerRef = useRef(null);
+  const [loader, setLoader] = useState(true);
   const { tracker } = useObserver(containerRef);
-  console.log(tracker);
+  useEffect(() => {
+    setTimeout(() => setLoader(false), 10000);
+  }, []);
   return (
     <>
       <Navigation />
-      <SectionTracker tracker={tracker} />
-      <div className="App" ref={containerRef}>
-        <Suspense fallback={<div>Loading...</div>}>
-          <LandingSection />
-          <CommunitySection />
-          <LocationSection />
-          <MenuSection />
-          <PopularRecipesSection />
-        </Suspense>
+      {loader ? <Loading top="10vh" /> : ""}
+      <div className={loader ? "app__hide" : "App"} ref={containerRef}>
+        <SectionTracker tracker={tracker} />
+        <LandingSection />
+        <CommunitySection />
+        <LocationSection />
+        <MenuSection />
+        <PopularRecipesSection tracker={tracker} />
       </div>
     </>
   );

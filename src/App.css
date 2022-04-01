@@ -1,3 +1,7 @@
+.app__hide {
+  visibility: hidden;
+}
+
 .section__padding {
   scroll-margin-top: 8vh;
   padding-top: 3rem;

@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  padding: 4rem 2rem;
+  padding: 4rem 2.5rem;
   margin: 0 auto;
   width: 100vw;
 }
@@ -23,14 +23,10 @@
   margin-bottom: 1.5rem;
 }
 
-.app__menu-vertical_line {
-  position: absolute;
-  width: 3px;
-  top: 0;
-  transform: translateX(100px);
-  min-height: 550px;
-  background-color: var(--color-dark-red);
+.app__menu-column_card > h4 {
+  color: var(--color-darker-grey);
 }
+
 .app__menu-column_card p {
   overflow-wrap: break-word;
   width: 90%;

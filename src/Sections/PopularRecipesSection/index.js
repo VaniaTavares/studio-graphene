@@ -5,14 +5,12 @@ import {
 } from "react-icons/bs";
 import { Loading, DisplayErrorMessage, DisplayCard } from "../../Components";
 import useRecipes from "../../Constants and Functions/useRecipes";
-
+import images from "../../Constants and Functions/Images";
 import "./index.css";
 
-const PopularRecipesSection = () => {
+const PopularRecipesSection = ({ tracker }) => {
   const { isLoading, isError, recipes } = useRecipes();
   const horizontalRef = useRef(null);
-  if (isLoading) return <Loading />;
-  else if (isError) return <DisplayErrorMessage />;
 
   const handleScroll = (direction) => {
     if (direction === "left") {
@@ -23,31 +21,52 @@ const PopularRecipesSection = () => {
   };
 
   return (
-    <section id="popular-recipes" className="flex__center section__padding">
-      <h2 className="section__title">Popular Recipes</h2>
-      <div className="app__recipes-container" ref={horizontalRef}>
-        {recipes.map((recipe) => (
-          <DisplayCard
-            recipe={recipe}
-            image={recipe.image}
-            title={recipe.title}
-            key={recipe.id + Math.random() * 10}
-            direction="column"
-          />
-        ))}
-      </div>
-      <div>
-        <BsFillArrowLeftSquareFill
-          onClick={() => handleScroll("left")}
-          fontSize={30}
-          color="#771e21"
-        />{" "}
-        <BsFillArrowRightSquareFill
-          onClick={() => handleScroll("right")}
-          color="#771e21"
-          fontSize={30}
-        />
-      </div>
+    <section
+      id="popular-recipes"
+      className="flex__center section__padding"
+      style={{ position: "relative" }}
+    >
+      {isLoading ? (
+        <Loading />
+      ) : isError ? (
+        <DisplayErrorMessage />
+      ) : (
+        <>
+          <h2 className="section__title">Popular Recipes</h2>
+          <div className="app__recipes-container" ref={horizontalRef}>
+            {recipes.map((recipe) => (
+              <DisplayCard
+                recipe={recipe}
+                image={recipe.image}
+                title={recipe.title}
+                key={recipe.id + Math.random() * 10}
+                direction="column"
+              />
+            ))}
+          </div>
+          <div>
+            <BsFillArrowLeftSquareFill
+              onClick={() => handleScroll("left")}
+              fontSize={30}
+              color="#771e21"
+            />{" "}
+            <BsFillArrowRightSquareFill
+              onClick={() => handleScroll("right")}
+              color="#771e21"
+              fontSize={30}
+            />
+          </div>
+          <div
+            className={
+              tracker === "#popular-recipes"
+                ? "app__recipes__image animate"
+                : "app__recipes__image"
+            }
+          >
+            <img src={images.pasta} alt="pasta" />
+          </div>
+        </>
+      )}
     </section>
   );
 };

@@ -2,7 +2,7 @@
   position: fixed;
   height: max-content;
   top: 30vh;
-  left: 2vw;
+  left: 1.5vw;
   z-index: 20;
 }
 
@@ -13,7 +13,7 @@
 
 .line {
   height: 1.5px;
-  background-color: var(--color-dark-red);
+  background-color: var(--color-darker-grey);
   position: absolute;
   top: 50%;
   width: 45%;
