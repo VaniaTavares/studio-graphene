@@ -1,0 +1,29 @@
+.app__recipes-container {
+  position: relative;
+  display: flex;
+  overflow-x: scroll;
+  width: 88%;
+  left: 2%;
+  min-height: 350px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.app__recipes-container > div:nth-child(2n) {
+  align-self: flex-end;
+}
+
+.app__recipes-container > div:nth-child(2n + 1) {
+  align-self: flex-start;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.app__recipes-container + div {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3vh;
+}
