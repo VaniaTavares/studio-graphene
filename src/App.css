@@ -1,6 +1,7 @@
 .section__padding {
   scroll-margin-top: 7.5vh;
   padding-top: 2.5rem;
+  margin-bottom: 2rem;
   min-height: 70vh;
   flex-direction: column;
 }
@@ -9,14 +10,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
 }
 
 .flex__center {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
 .section__title {
@@ -40,11 +39,18 @@
   font-weight: 600;
   text-transform: uppercase;
   padding-bottom: 2rem;
-  font-size: 20px;
 }
 
 p {
   font-family: var(--font-base);
   font-size: var(--font-size-paragraph);
   width: 80%;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 15px;
 }
