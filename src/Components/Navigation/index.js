@@ -20,12 +20,12 @@ const Navigation = () => {
           className="app__navigation__small-screen_circle flex__center"
           onClick={() => setToggleMenu(true)}
         >
-          <GiForkKnifeSpoon color="#494949" fontSize={27} />
+          <GiForkKnifeSpoon color="#771e21" fontSize={27} />
         </div>
         {toggleMenu && (
           <div className="app__navigation__small-screen-overlay">
             <GiKnifeFork
-              color="#494949"
+              color="#fff"
               fontSize={27}
               onClick={() => setToggleMenu(false)}
               className="overlay__close"

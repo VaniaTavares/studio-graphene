@@ -9,10 +9,14 @@ const MenuCard = ({ title, description, price }) => {
     </div>
   );
 };
-
-const MenuColumn = ({ type, menus, index }) => {
+const MenuColumn = ({ type, menus, index, offsetY }) => {
+  const multiplier = index % 2 === 0 ? -0.5 : 0.5;
   return (
-    <div key={type} className="app__menu-column">
+    <div
+      key={type}
+      className="app__menu-column"
+      style={{ transform: `translateY(${offsetY * multiplier}px)` }}
+    >
       <h3 className="section__subtitle" style={{ alignSelf: "flex-start" }}>
         {type.split("_").join(" ")}
       </h3>
@@ -26,9 +30,9 @@ const MenuColumn = ({ type, menus, index }) => {
             key={menu.id}
           />
         ))}
-      {index !== 3 && (
+      {/* {index !== 3 && (
         <div className="app__menu-vertical_line" key={type + "a"}></div>
-      )}
+      )} */}
     </div>
   );
 };

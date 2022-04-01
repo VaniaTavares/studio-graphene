@@ -19,22 +19,16 @@ const useObserver = (containerRef) => {
 
   useEffect(() => {
     const { current } = containerRef;
-    if (current) {
-      setSectionsToWatch((prevSet) => [
-        ...prevSet,
-        ...Array.from(current.children).splice(3),
-      ]);
+    if (current && !sectionsToWatch.length) {
+      setSectionsToWatch([...Array.from(current.children)]);
     }
-  }, [containerRef]);
+  }, [containerRef, sectionsToWatch]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(intersectionCallBack, options);
-    if (sectionsToWatch.length === 4) {
-      sectionsToWatch.forEach((child) => {
-        observer.observe(child);
-      });
-    }
-
+    sectionsToWatch.forEach((child) => {
+      observer.observe(child);
+    });
     return () => {
       if (sectionsToWatch.length) {
         sectionsToWatch.forEach((child) => {

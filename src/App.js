@@ -1,29 +1,30 @@
-import React, { useRef } from "react";
-import {
-  CommunitySection,
-  LandingSection,
-  LocationSection,
-  MenuSection,
-  PopularRecipesSection,
-} from "./Sections";
-import { Navigation, SectionTracker } from "./Components";
+import React, { useRef, lazy, Suspense } from "react";
+import { CommunitySection, LandingSection, LocationSection } from "./Sections";
+import { Navigation, SectionTracker, Loading } from "./Components";
 import useObserver from "./Constants and Functions/useObserver";
 import "./App.css";
-
+const MenuSection = lazy(() => import("./Sections/MenuSection"));
+const PopularRecipesSection = lazy(() =>
+  import("./Sections/PopularRecipesSection")
+);
 const App = () => {
   const containerRef = useRef(null);
   const { tracker } = useObserver(containerRef);
-
+  console.log(tracker);
   return (
-    <div className="App" ref={containerRef}>
+    <>
       <Navigation />
       <SectionTracker tracker={tracker} />
-      <LandingSection />
-      <CommunitySection tracker={tracker} />
-      <LocationSection />
-      <MenuSection />
-      <PopularRecipesSection />
-    </div>
+      <div className="App" ref={containerRef}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <LandingSection />
+          <CommunitySection />
+          <LocationSection />
+          <MenuSection />
+          <PopularRecipesSection />
+        </Suspense>
+      </div>
+    </>
   );
 };
 

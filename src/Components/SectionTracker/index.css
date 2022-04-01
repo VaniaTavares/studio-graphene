@@ -3,6 +3,7 @@
   height: max-content;
   top: 30vh;
   left: 2vw;
+  z-index: 20;
 }
 
 .app__section-tracker_row {
@@ -11,8 +12,8 @@
 }
 
 .line {
-  height: 1px;
-  background-color: var(--color-darker-grey);
+  height: 1.5px;
+  background-color: var(--color-dark-red);
   position: absolute;
   top: 50%;
   width: 45%;

@@ -4,7 +4,6 @@ import axios from "axios";
 const fetchRecipes = async () => {
   const controller = new AbortController();
   const signal = controller.signal;
-  console.count(`Requested: `);
   try {
     const res = await axios.get(`${process.env.REACT_APP_RANDOM_RECIPES_API}`, {
       signal,

@@ -21,12 +21,9 @@ const PopularRecipesSection = () => {
       horizontalRef.current.scrollLeft += 400;
     }
   };
+
   return (
-    <section
-      id="popular-recipes"
-      className="flex__start section__padding"
-      style={{ position: "relative", top: "20vh" }}
-    >
+    <section id="popular-recipes" className="flex__center section__padding">
       <h2 className="section__title">Popular Recipes</h2>
       <div className="app__recipes-container" ref={horizontalRef}>
         {recipes.map((recipe) => (

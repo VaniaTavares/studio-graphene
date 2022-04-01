@@ -19,8 +19,17 @@ const DisplayCard = ({ image, recipe, comment, title, direction }) => {
             <BsInstagram color="#771e21" fontSize={14} />
           </div>
         )}
+        {recipe ? (
+          <button className="image__overlay custom__button">See More</button>
+        ) : (
+          ""
+        )}
       </div>
-      <div className="content__container">
+      <div
+        className={
+          recipe ? "content__container__end" : "content__container flex__center"
+        }
+      >
         {recipe ? <span>Dairy Free: {dairyFree ? "Yes" : "No"}</span> : ""}
         {recipe ? <span>Gluten Free: {glutenFree ? "Yes" : "No"}</span> : ""}
         <h4>{title}</h4>

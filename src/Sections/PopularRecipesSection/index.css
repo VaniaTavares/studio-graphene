@@ -3,7 +3,6 @@
   display: flex;
   overflow-x: scroll;
   width: 88%;
-  left: 2%;
   min-height: 350px;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -25,5 +24,5 @@
   width: 60%;
   display: flex;
   justify-content: space-around;
-  margin-top: 3vh;
+  margin: 3vh auto 0 auto;
 }

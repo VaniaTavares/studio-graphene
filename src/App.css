@@ -1,8 +1,8 @@
 .section__padding {
-  scroll-margin-top: 7.5vh;
-  padding-top: 2.5rem;
+  scroll-margin-top: 8vh;
+  padding-top: 3rem;
   margin-bottom: 2rem;
-  min-height: 70vh;
+  min-height: 90vh;
   flex-direction: column;
   width: inherit;
 }
@@ -21,7 +21,7 @@
 
 .section__title {
   color: var(--color-dark-red);
-  background-color: var(--color-beige);
+  background-color: var(--color-transparent-beige);
   font-family: var(--font-title);
   font-weight: 600;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);

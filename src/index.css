@@ -8,15 +8,16 @@
   --font-size-paragraph: 0.9rem;
   --font-size-xs: 0.7rem;
 
-  --color-gray: rgb(65, 65, 65);
   --color-black: rgb(0, 0, 0);
   --color-darker-grey: rgb(73, 73, 73);
   --color-white: rgb(255, 255, 255);
   --color-purple: rgb(150, 43, 71);
   --color-dark-red: rgb(119, 30, 33);
   --color-beige: rgb(224, 216, 210);
+  --color-transparent-beige: rgba(224, 216, 210, 0.7);
 
   --base-margin: 0.5rem;
+  --padding-xs: 0.25rem;
 }
 
 * {
