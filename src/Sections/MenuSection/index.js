@@ -1,63 +1,47 @@
 import React, { useEffect, useState } from "react";
+import { useQuery, QueryClient, QueryClientProvider } from "react-query";
 import axios from "axios";
-
+import { MenuColumn, Loading, DisplayErrorMessage } from "../../Components";
 import "./index.css";
-const Menu = ({ title, description, price }) => {
-  return (
-    <div className="app__menu-column_card flex__center">
-      <h4>{title}</h4>
-      <p>{description}</p>
-      <span>{price}</span>
-    </div>
-  );
+const fetchMenus = () => {
+  return axios.get(`${process.env.REACT_APP_GRAPHENE_API}`);
 };
 
-const MenuSection = () => {
-  const [menus, setMenus] = useState([]);
-  const [types, setTypes] = useState([]);
-  useEffect(() => {
-    const controller = new AbortController();
-    axios
-      .get(`${process.env.REACT_APP_GRAPHENE_API}`, {
-        signal: controller.signal,
-      })
-      .then((res) => {
-        setMenus(res.data);
-        setTypes((prev) => {
-          return [...new Set([...prev, ...res.data.map((menu) => menu.type)])];
-        });
-      })
-      .catch((err) => {
-        if (axios.isCancel()) return;
-        else console.error(err);
-      });
+const queryClient = new QueryClient();
 
-    return () => controller.abort();
-  }, []);
+const MenuSection = () => {
+  const [offsetY, setOffsetY] = useState(0);
+  const handleScroll = () => setOffsetY(window.pageYOffset);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [offsetY]);
+
+  const { isLoading, data, error } = useQuery("menus", fetchMenus, {
+    cacheTime: 3600000,
+  });
+
+  if (isLoading) return <Loading />;
+  else if (error) return <DisplayErrorMessage />;
 
   return (
-    <section id="menu" className="flex__center section__padding">
+    <section id="menu" className="flex__start section__padding">
       <h2 className="section__title">Our Menu</h2>
-      <div className="app__menu flex__center">
-        {types.length &&
-          types.map((type) => (
-            <div key={type} className="app__menu-column">
-              <h3 className="section__subtitle">{type.split("_").join(" ")}</h3>
-              {menus
-                .filter((menu) => menu.type === type)
-                .map((menu) => (
-                  <Menu
-                    title={menu.title}
-                    price={menu.price}
-                    description={menu.description}
-                    key={menu.id}
-                  />
-                ))}
-            </div>
-          ))}
+      <div className="app__menu__container flex__center">
+        {[...new Set(data.data.map((menu) => menu.type))].map((type, index) => (
+          <MenuColumn index={index} type={type} key={type} menus={data.data} />
+        ))}
       </div>
     </section>
   );
 };
 
-export default MenuSection;
+const MenuWrapper = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <MenuSection />
+    </QueryClientProvider>
+  );
+};
+export default MenuWrapper;

@@ -1,8 +1,15 @@
 .section__padding {
   scroll-margin-top: 7.5vh;
-  padding: 2rem 0 1.5rem 0;
+  padding-top: 2.5rem;
   min-height: 70vh;
   flex-direction: column;
+}
+
+.flex__start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
 
 .flex__center {
@@ -14,15 +21,17 @@
 
 .section__title {
   color: var(--color-dark-red);
+  background-color: var(--color-beige);
   font-family: var(--font-title);
   font-weight: 600;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
-  padding-bottom: 3rem;
+  margin-bottom: 3rem;
   text-align: center;
   overflow-wrap: break-word;
   max-width: fit-content;
   display: inline-block;
+  font-size: 35px;
 }
 
 .section__subtitle {
@@ -31,6 +40,7 @@
   font-weight: 600;
   text-transform: uppercase;
   padding-bottom: 2rem;
+  font-size: 20px;
 }
 
 p {

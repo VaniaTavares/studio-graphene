@@ -1,0 +1,14 @@
+.app__community {
+  position: relative;
+  animation: slowentry 1s ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slowentry {
+  0% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

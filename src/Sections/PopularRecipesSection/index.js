@@ -2,7 +2,7 @@ import React from "react";
 
 const PopularRecipesSection = () => {
   return (
-    <section id="popular-recipes" className="flex__center section__padding">
+    <section id="popular-recipes" className="flex__start section__padding">
       <h2 className="section__title">Popular Recipes</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas,
