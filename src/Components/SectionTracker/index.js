@@ -1,9 +1,10 @@
 import React from "react";
 
-import { navbarLinks } from "../../Constants/NavLinks";
+import { navbarLinks } from "../../Constants and Functions/NavLinks";
 import "./index.css";
 const treated = [...navbarLinks];
 treated.shift();
+
 const SectionTracker = ({ tracker }) => {
   return (
     <div className="app__section-tracker">

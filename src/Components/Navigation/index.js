@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GiForkKnifeSpoon, GiKnifeFork } from "react-icons/gi";
 
-import { navbarLinks } from "../../Constants/NavLinks";
+import { navbarLinks } from "../../Constants and Functions/NavLinks";
 import "./index.css";
 
 const Navigation = () => {

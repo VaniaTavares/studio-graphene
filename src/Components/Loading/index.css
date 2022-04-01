@@ -1,0 +1,17 @@
+.app__loading {
+  width: clamp(100px, 30%, 250px);
+  height: clamp(100px, 30%, 250px);
+  margin: 0 auto;
+}
+
+.app__loading > img {
+  width: 100%;
+  height: 100%;
+  animation: rotating 2.5s ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes rotating {
+  100% {
+    transform: rotate(360deg);
+  }
+}
