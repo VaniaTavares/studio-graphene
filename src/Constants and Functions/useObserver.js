@@ -7,7 +7,6 @@ const options = {
 };
 
 const useObserver = (containerRef) => {
-  console.log(containerRef);
   const [sectionsToWatch, setSectionsToWatch] = useState([]);
   const [tracker, setTracker] = useState("");
 

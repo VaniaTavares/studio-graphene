@@ -35,7 +35,7 @@
 .app__navigation-links a,
 .app__navbar-smallscreen_links a {
   text-decoration: none;
-  margin: 0.5rem;
+  margin: var(--base-margin);
   color: inherit;
   font: 600 var(--font-size-base) var(--font-base);
 }
@@ -44,7 +44,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(255, 194, 80, 0.95);
+  background-color: rgba(119, 30, 33, 0.95);
   width: 100%;
   height: 100vh;
   z-index: 5;

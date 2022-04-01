@@ -1,0 +1,74 @@
+.card__display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  font-family: var(--font-base);
+  font-size: var(--font-size-xs);
+  background-color: var(--color-beige);
+  -webkit-box-shadow: 17px 22px 22px -11px var(--color-beige);
+  -moz-box-shadow: 17px 22px 22px -11px var(--color-beige);
+  box-shadow: 17px 22px 22px -11px var(--color-beige);
+  margin: var(--base-margin);
+}
+
+.card__column {
+  flex-direction: column;
+}
+
+.card__row {
+  flex-direction: row;
+}
+
+.image__container,
+.content__container {
+  position: relative;
+  width: 150px;
+  height: 120px;
+  margin: var(--base-margin) auto 0 auto;
+}
+.image__container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image__overlay {
+  width: 30%;
+  height: 30%;
+  position: absolute;
+  font-size: inherit;
+  font-family: inherit;
+  text-align: center;
+}
+
+.overlay__black {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--color-white);
+  top: 0;
+  left: 0;
+}
+
+.overlay__beige {
+  background-color: var(--color-beige);
+  top: 0;
+  right: 0;
+}
+
+.content__container > h4 {
+  color: var(--color-purple);
+  font-family: var(--font-title);
+  font-size: var(--font-size-paragraph);
+  font-weight: 600;
+}
+.content__container > span {
+  font-size: inherit;
+  font-family: inherit;
+  position: relative;
+  max-width: 150px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
