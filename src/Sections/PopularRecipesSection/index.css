@@ -32,8 +32,9 @@
   max-height: 600px;
   z-index: -10;
   position: absolute;
-  bottom: -7%;
-  right: -5%;
+  bottom: -50%;
+  right: -25%;
+  opacity: 0.5;
 }
 
 .app__recipes__image > img {

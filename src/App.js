@@ -19,8 +19,8 @@ const App = () => {
   }, []);
   return (
     <>
-      <Navigation />
-      {loader ? <Loading top="10vh" /> : ""}
+      <Navigation loader={loader} />
+      {loader ? <Loading fixed={true} /> : ""}
       <div className={loader ? "app__hide" : "App"} ref={containerRef}>
         <SectionTracker tracker={tracker} />
         <LandingSection />

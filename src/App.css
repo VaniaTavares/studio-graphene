@@ -6,7 +6,7 @@
   scroll-margin-top: 8vh;
   padding-top: 3rem;
   margin-bottom: 2rem;
-  min-height: 90vh;
+  min-height: 75vh;
   flex-direction: column;
   width: inherit;
 }
@@ -30,7 +30,6 @@
   font-weight: 600;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
-  margin-bottom: 3rem;
   text-align: center;
   overflow-wrap: break-word;
   max-width: fit-content;
@@ -38,6 +37,9 @@
   font-size: 35px;
 }
 
+.margin__bottom {
+  margin-bottom: 3rem;
+}
 .section__subtitle {
   color: var(--color-purple);
   font-family: var(--font-title);

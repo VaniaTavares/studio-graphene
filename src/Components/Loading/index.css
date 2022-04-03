@@ -6,7 +6,16 @@
   position: relative;
 }
 
-.app__loading > img {
+.app__loading-fixed {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  top: 15vh;
+  left: calc(50vw - 200px);
+}
+
+.app__loading > img,
+.app__loading-fixed > img {
   width: 100%;
   height: 100%;
   animation: rotating 2.5s ease-in-out;

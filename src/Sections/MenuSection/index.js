@@ -1,7 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useQuery, QueryClient, QueryClientProvider } from "react-query";
 import axios from "axios";
-import { MenuColumn, DisplayErrorMessage, Loading } from "../../Components";
+import {
+  MenuColumn,
+  DisplayErrorMessage,
+  Loading,
+  SectionTitle,
+} from "../../Components";
 import "./index.css";
 const fetchMenus = () => {
   return axios.get(`${process.env.REACT_APP_GRAPHENE_API}`);
@@ -13,7 +18,7 @@ const MenuSection = () => {
   const [offsetY, setOffsetY] = useState(0);
   const menuRef = useRef(null);
   const handleScroll = () => {
-    const newValue = window.pageYOffset - menuRef.current.offsetTop + 80;
+    const newValue = window.pageYOffset - menuRef.current.offsetTop;
     if (newValue > 0 && menuRef.current.clientWidth > 849) {
       setOffsetY(newValue);
     } else if (newValue > 0 && menuRef.current.clientWidth > 549) {
@@ -43,7 +48,7 @@ const MenuSection = () => {
         <DisplayErrorMessage />
       ) : (
         <>
-          <h2 className="section__title">Our Menu</h2>
+          <SectionTitle text="Our Menu" />
           <div className="app__menu__container">
             {[...new Set(data.data.map((menu) => menu.type))].map(
               (type, index) => (

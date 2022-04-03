@@ -3,20 +3,21 @@ import { BiDish } from "react-icons/bi";
 import { BsInstagram } from "react-icons/bs";
 import "./index.css";
 
-const DisplayCard = ({ image, recipe, comment, title, direction }) => {
-  const { servings, dairyFree, glutenFree, analyzedInstructions } = recipe;
-
+const DisplayCard = ({ image, recipe, comment, title, direction, align }) => {
   return (
-    <div className={`card__display card__${direction}`}>
+    <div
+      className={`card__display card__${direction}`}
+      style={{ alignSelf: `${align}` }}
+    >
       <div className="image__container">
         <img src={image} alt={title} />
         {recipe ? (
           <div className="image__overlay overlay__black flex__center">
-            {servings} <BiDish color="#fff" fontSize={14} />
+            {recipe.servings} <BiDish color="#fff" fontSize={14} />
           </div>
         ) : (
           <div className="image__overlay overlay__beige flex__center">
-            <BsInstagram color="#771e21" fontSize={14} />
+            <BsInstagram color="#e0d8d2" fontSize={14} />
           </div>
         )}
         {recipe ? (
@@ -27,15 +28,27 @@ const DisplayCard = ({ image, recipe, comment, title, direction }) => {
       </div>
       <div
         className={
-          recipe ? "content__container__end" : "content__container flex__center"
+          recipe ? "content__container__start" : "content__container__start"
         }
       >
-        {recipe ? <span>Dairy Free: {dairyFree ? "Yes" : "No"}</span> : ""}
-        {recipe ? <span>Gluten Free: {glutenFree ? "Yes" : "No"}</span> : ""}
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          {recipe ? (
+            <span>Dairy Free: {recipe.dairyFree ? "Yes" : "No"}</span>
+          ) : (
+            ""
+          )}
+          {recipe ? (
+            <span>Gluten Free: {recipe.glutenFree ? "Yes" : "No"}</span>
+          ) : (
+            ""
+          )}
+        </div>
         <h4>{title}</h4>
         <span>
           {recipe
-            ? analyzedInstructions[0].steps.map((step) => step.step).join(" ")
+            ? recipe.analyzedInstructions[0].steps
+                .map((step) => step.step)
+                .join(" ")
             : comment}
         </span>
       </div>

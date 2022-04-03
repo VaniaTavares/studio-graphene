@@ -3,7 +3,12 @@ import {
   BsFillArrowLeftSquareFill,
   BsFillArrowRightSquareFill,
 } from "react-icons/bs";
-import { Loading, DisplayErrorMessage, DisplayCard } from "../../Components";
+import {
+  Loading,
+  DisplayErrorMessage,
+  DisplayCard,
+  SectionTitle,
+} from "../../Components";
 import useRecipes from "../../Constants and Functions/useRecipes";
 import images from "../../Constants and Functions/Images";
 import "./index.css";
@@ -32,7 +37,7 @@ const PopularRecipesSection = ({ tracker }) => {
         <DisplayErrorMessage />
       ) : (
         <>
-          <h2 className="section__title">Popular Recipes</h2>
+          <SectionTitle text="Popular Recipes" styles={true} />
           <div className="app__recipes-container" ref={horizontalRef}>
             {recipes.map((recipe) => (
               <DisplayCard
@@ -63,7 +68,7 @@ const PopularRecipesSection = ({ tracker }) => {
                 : "app__recipes__image"
             }
           >
-            <img src={images.pasta} alt="pasta" />
+            <img src={images.loading} alt="dish" />
           </div>
         </>
       )}

@@ -1,7 +1,34 @@
-.app__community {
+.app__community-container {
   position: relative;
-  animation: slowentry 1s ease-in;
-  animation-fill-mode: forwards;
+  display: flex;
+  flex-direction: column;
+  width: 88%;
+}
+
+.app__community-image__container {
+  width: 150px;
+  height: 150px;
+  opacity: 0.95;
+}
+
+.app__community-image__container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.flex__reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @keyframes slowentry {
