@@ -16,8 +16,10 @@ const App = () => {
   const [loader, setLoader] = useState(true);
   const { tracker } = useObserver(containerRef);
   useEffect(() => {
-    setTimeout(() => setLoader(false), 10000);
-  }, []);
+    if (loader) {
+      setTimeout(() => setLoader(false), 10000);
+    }
+  }, [loader]);
   return (
     <>
       <Navigation loader={loader} />
