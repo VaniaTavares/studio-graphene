@@ -15,7 +15,7 @@ export const navbarLinks = [
     title: "Our Menu",
   },
   {
-    id: "1002",
+    id: "1003",
     refLink: "#popular-recipes",
     title: "Recipes",
   },

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useQuery, QueryClient, QueryClientProvider } from "react-query";
+import { useQuery } from "react-query";
 import axios from "axios";
 import {
   MenuColumn,
@@ -11,8 +11,6 @@ import "./index.css";
 const fetchMenus = () => {
   return axios.get(`${process.env.REACT_APP_GRAPHENE_API}`);
 };
-
-const queryClient = new QueryClient();
 
 const MenuSection = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -31,10 +29,10 @@ const MenuSection = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const { data, error, isLoading } = useQuery("menus", fetchMenus, {
+  const { data, isError, error, isLoading } = useQuery("menus", fetchMenus, {
     cacheTime: 3600000,
   });
-
+  console.log(data?.data);
   return (
     <section
       id="menu"
@@ -44,19 +42,19 @@ const MenuSection = () => {
     >
       {isLoading ? (
         <Loading />
-      ) : error ? (
-        <DisplayErrorMessage />
+      ) : isError ? (
+        <DisplayErrorMessage message={error?.message} />
       ) : (
         <>
           <SectionTitle text="Our Menu" />
           <div className="app__menu__container">
-            {[...new Set(data.data.map((menu) => menu.type))].map(
+            {[...new Set(data?.data.map((menu) => menu.type))].map(
               (type, index) => (
                 <MenuColumn
                   index={index}
                   type={type}
                   key={type}
-                  menus={data.data}
+                  menus={data?.data}
                   offsetY={offsetY}
                 />
               )
@@ -68,11 +66,4 @@ const MenuSection = () => {
   );
 };
 
-const MenuWrapper = () => {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <MenuSection />
-    </QueryClientProvider>
-  );
-};
-export default MenuWrapper;
+export default MenuSection;
