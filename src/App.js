@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from "react";
 import {
   CommunitySection,
   LandingSection,
-  MenuSection,
   PopularRecipesSection,
 } from "./Sections";
 import { Loading, Navigation, SectionTracker, Footer } from "./Components";
@@ -23,7 +22,7 @@ const App = () => {
       <div className={loader ? "app__hide" : "App"} ref={containerRef}>
         <SectionTracker tracker={tracker} />
         <LandingSection />
-        <CommunitySection />
+        {/* <CommunitySection /> */}
         <MenuSection />
         <PopularRecipesSection tracker={tracker} />
       </div>
