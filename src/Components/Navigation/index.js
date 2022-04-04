@@ -4,10 +4,10 @@ import { GiForkKnifeSpoon, GiKnifeFork } from "react-icons/gi";
 import { navbarLinks } from "../../Constants and Functions/NavLinks";
 import "./index.css";
 
-const Navigation = () => {
+const Navigation = ({ loader }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
-    <nav className="app__navigation">
+    <nav className={loader ? "app__hide" : "app__navigation"}>
       <ul className="app__navigation-links">
         {navbarLinks.map((link) => (
           <li key={link.id}>
