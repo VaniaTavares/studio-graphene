@@ -22,8 +22,8 @@ const App = () => {
       <div className={loader ? "app__hide" : "App"} ref={containerRef}>
         <SectionTracker tracker={tracker} />
         <LandingSection />
-        {/* <CommunitySection /> */}
-        <MenuSection />
+        <CommunitySection />
+        {/* <MenuSection /> */}
         <PopularRecipesSection tracker={tracker} />
       </div>
       <Footer />
