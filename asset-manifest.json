@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/studio-graphene/static/css/main.6a5165a5.css",
-    "main.js": "/studio-graphene/static/js/main.ee8603bc.js",
+    "main.js": "/studio-graphene/static/js/main.70179cbf.js",
     "static/media/homefood.png": "/studio-graphene/static/media/homefood.31f923eae3b7171c1c6e.png",
     "static/media/paella.png": "/studio-graphene/static/media/paella.1d94dc1daee3059cfdb8.png",
     "static/media/burrito.png": "/studio-graphene/static/media/burrito.6399ed05bd8ebad8a1f6.png",
@@ -10,10 +10,10 @@
     "static/media/loading.png": "/studio-graphene/static/media/loading.65488322ae43666a9e0d.png",
     "index.html": "/studio-graphene/index.html",
     "main.6a5165a5.css.map": "/studio-graphene/static/css/main.6a5165a5.css.map",
-    "main.ee8603bc.js.map": "/studio-graphene/static/js/main.ee8603bc.js.map"
+    "main.70179cbf.js.map": "/studio-graphene/static/js/main.70179cbf.js.map"
   },
   "entrypoints": [
     "static/css/main.6a5165a5.css",
-    "static/js/main.ee8603bc.js"
+    "static/js/main.70179cbf.js"
   ]
 }
