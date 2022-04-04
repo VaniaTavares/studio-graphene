@@ -14,15 +14,15 @@ const fetchMenus = () => {
 
 const MenuSection = () => {
   const [offsetY, setOffsetY] = useState(0);
-  const [menus, setMenus] = useState([]);
-  const [types, setTypes] = useState([]);
 
-  const onSuccess = (info) => {
-    setMenus(info?.data);
-    const arrayTent = info?.data.map((menu) => menu.type);
-    setTypes(
-      arrayTent.filter((type, index) => arrayTent.indexOf(type) === index)
-    );
+  const select = (info) => {
+    const arrayTypes = info?.data.map((menu) => menu.type);
+    return {
+      menus: info?.data,
+      types: arrayTypes.filter(
+        (type, index) => arrayTypes.indexOf(type) === index
+      ),
+    };
   };
   const menuRef = useRef(null);
   const handleScroll = () => {
@@ -39,11 +39,11 @@ const MenuSection = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const { isError, error, isLoading } = useQuery("menus", fetchMenus, {
+  const { data, isError, error, isLoading } = useQuery("menus", fetchMenus, {
     cacheTime: 3600000,
     staleTime: 3600000,
     refetchOnMount: false,
-    onSuccess,
+    select,
   });
 
   return (
@@ -61,12 +61,12 @@ const MenuSection = () => {
         <>
           <SectionTitle text="Our Menu" />
           <div className="app__menu__container">
-            {types.map((type, index) => (
+            {data.types.map((type, index) => (
               <MenuColumn
                 index={index}
                 type={type}
                 key={type}
-                menus={menus}
+                menus={data.menus}
                 offsetY={offsetY}
               />
             ))}
