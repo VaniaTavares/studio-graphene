@@ -20,11 +20,6 @@ const DisplayCard = ({ image, recipe, comment, title, direction, align }) => {
             <BsInstagram color="#e0d8d2" fontSize={14} />
           </div>
         )}
-        {recipe ? (
-          <button className="image__overlay custom__button">See More</button>
-        ) : (
-          ""
-        )}
       </div>
       <div
         className={
@@ -44,13 +39,15 @@ const DisplayCard = ({ image, recipe, comment, title, direction, align }) => {
           )}
         </div>
         <h4>{title}</h4>
-        <span>
-          {recipe
-            ? recipe.analyzedInstructions[0].steps
-                .map((step) => step.step)
-                .join(" ")
-            : comment}
-        </span>
+        {recipe ? (
+          <button className="custom__button">
+            <a target="blank" href={recipe.spoonacularSourceUrl}>
+              See More
+            </a>
+          </button>
+        ) : (
+          <span>{comment}</span>
+        )}
       </div>
     </div>
   );

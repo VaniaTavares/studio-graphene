@@ -23,10 +23,10 @@ const App = () => {
   return (
     <>
       <Navigation loader={loader} />
+      <SectionTracker loader={loader} tracker={tracker} />
       {loader ? <Loading fixed={true} /> : ""}
       <QueryClientProvider client={queryClient}>
         <div className={loader ? "app__hide" : "App"} ref={containerRef}>
-          <SectionTracker tracker={tracker} />
           <LandingSection />
           <CommunitySection />
           <MenuSection />
