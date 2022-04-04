@@ -11,16 +11,11 @@ export const navbarLinks = [
   },
   {
     id: "1002",
-    refLink: "#location",
-    title: "Location",
-  },
-  {
-    id: "1003",
     refLink: "#menu",
     title: "Our Menu",
   },
   {
-    id: "1004",
+    id: "1002",
     refLink: "#popular-recipes",
     title: "Recipes",
   },
