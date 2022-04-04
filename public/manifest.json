@@ -1,0 +1,18 @@
+{
+  "short_name": "Ours Food",
+  "name": "Ours Food Experience",
+  "icons": [
+    {
+      "src": "/food.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#fff",
+
+  "description": "Prototype for restaurant webpage"
+}
