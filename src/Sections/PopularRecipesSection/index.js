@@ -36,7 +36,6 @@ const PopularRecipesSection = ({ tracker }) => {
       horizontalRef.current.scrollLeft += 400;
     }
   };
-  console.log(data[0]);
 
   return (
     <section
