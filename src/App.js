@@ -17,7 +17,7 @@ const App = () => {
   const { tracker } = useObserver(containerRef);
   useEffect(() => {
     if (loader) {
-      setTimeout(() => setLoader(false), 10000);
+      setTimeout(() => setLoader(false), 8000);
     }
   }, [loader]);
   return (

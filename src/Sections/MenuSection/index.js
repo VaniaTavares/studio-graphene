@@ -14,6 +14,16 @@ const fetchMenus = () => {
 
 const MenuSection = () => {
   const [offsetY, setOffsetY] = useState(0);
+  const [menus, setMenus] = useState([]);
+  const [types, setTypes] = useState([]);
+
+  const onSuccess = (info) => {
+    setMenus(info?.data);
+    const arrayTent = info?.data.map((menu) => menu.type);
+    setTypes(
+      arrayTent.filter((type, index) => arrayTent.indexOf(type) === index)
+    );
+  };
   const menuRef = useRef(null);
   const handleScroll = () => {
     const newValue = window.pageYOffset - menuRef.current.offsetTop;
@@ -29,10 +39,13 @@ const MenuSection = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const { data, isError, error, isLoading } = useQuery("menus", fetchMenus, {
+  const { isError, error, isLoading } = useQuery("menus", fetchMenus, {
     cacheTime: 3600000,
+    staleTime: 3600000,
+    refetchOnMount: false,
+    onSuccess,
   });
-  console.log(data?.data);
+
   return (
     <section
       id="menu"
@@ -48,17 +61,15 @@ const MenuSection = () => {
         <>
           <SectionTitle text="Our Menu" />
           <div className="app__menu__container">
-            {[...new Set(data?.data.map((menu) => menu.type))].map(
-              (type, index) => (
-                <MenuColumn
-                  index={index}
-                  type={type}
-                  key={type}
-                  menus={data?.data}
-                  offsetY={offsetY}
-                />
-              )
-            )}
+            {types.map((type, index) => (
+              <MenuColumn
+                index={index}
+                type={type}
+                key={type}
+                menus={menus}
+                offsetY={offsetY}
+              />
+            ))}
           </div>
         </>
       )}

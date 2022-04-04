@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { useQuery } from "react-query";
+import axios from "axios";
 import {
   BsFillArrowLeftSquareFill,
   BsFillArrowRightSquareFill,
@@ -9,13 +11,27 @@ import {
   DisplayCard,
   SectionTitle,
 } from "../../Components";
-import useRecipes from "../../Constants and Functions/useRecipes";
+
 import images from "../../Constants and Functions/Images";
 import "./index.css";
 
 const PopularRecipesSection = ({ tracker }) => {
-  const { isLoading, isError, recipes } = useRecipes();
+  const [recipes, setRecipes] = useState([]);
+  const onSuccess = (info) => {
+    setRecipes(info?.data.recipes);
+  };
   const horizontalRef = useRef(null);
+  const { isError, error, isLoading } = useQuery(
+    "recipes",
+    () => {
+      return axios.get(`${process.env.REACT_APP_RANDOM_RECIPES_API}`);
+    },
+    {
+      cacheTime: 18000000,
+      staleTime: 18000000,
+      onSuccess,
+    }
+  );
 
   const handleScroll = (direction) => {
     if (direction === "left") {
@@ -31,23 +47,24 @@ const PopularRecipesSection = ({ tracker }) => {
       className="flex__center section__padding"
       style={{ position: "relative" }}
     >
-      {isLoading ? (
+      {isLoading || recipes?.length === 0 ? (
         <Loading />
       ) : isError ? (
-        <DisplayErrorMessage />
+        <DisplayErrorMessage messge={error?.message} />
       ) : (
         <>
           <SectionTitle text="Popular Recipes" styles={true} />
           <div className="app__recipes-container" ref={horizontalRef}>
-            {recipes.map((recipe) => (
-              <DisplayCard
-                recipe={recipe}
-                image={recipe.image}
-                title={recipe.title}
-                key={recipe.id + Math.random() * 10}
-                direction="column"
-              />
-            ))}
+            {recipes?.length > 0 &&
+              recipes.map((recipe) => (
+                <DisplayCard
+                  recipe={recipe}
+                  image={recipe.image}
+                  title={recipe.title}
+                  key={recipe.id + Math.random() * 10}
+                  direction="column"
+                />
+              ))}
           </div>
           <div>
             <BsFillArrowLeftSquareFill

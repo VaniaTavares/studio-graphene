@@ -10,7 +10,7 @@ const CommunitySection = () => {
       <div className="app__community-container">
         {community.map((post, index) => (
           <div
-            key={"a" + Math.floor(Math.random() * 100)}
+            key={"a" + Math.floor(Math.random() * 1000)}
             className={index % 2 === 0 ? "flex__row" : "flex__reverse"}
           >
             <div className="app__community-image__container">
