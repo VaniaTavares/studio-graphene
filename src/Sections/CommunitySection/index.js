@@ -9,7 +9,10 @@ const CommunitySection = () => {
       <SectionTitle text="Meet Our Community" styles={true} />
       <div className="app__community-container">
         {community.map((post, index) => (
-          <div className={index % 2 === 0 ? "flex__row" : "flex__reverse"}>
+          <div
+            key={"a" + Math.floor(Math.random() * 100)}
+            className={index % 2 === 0 ? "flex__row" : "flex__reverse"}
+          >
             <div className="app__community-image__container">
               <img src={images.loading} alt="dish" />
             </div>

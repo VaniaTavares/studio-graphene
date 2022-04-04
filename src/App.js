@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from "react";
 import {
   CommunitySection,
   LandingSection,
-  LocationSection,
   MenuSection,
   PopularRecipesSection,
 } from "./Sections";
@@ -25,7 +24,6 @@ const App = () => {
         <SectionTracker tracker={tracker} />
         <LandingSection />
         <CommunitySection />
-        <LocationSection />
         <MenuSection />
         <PopularRecipesSection tracker={tracker} />
       </div>

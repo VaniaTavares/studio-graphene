@@ -4,6 +4,10 @@
   --font-title: "Cormorant Upright", serif;
   --font-base: "Montserrat", sans-serif;
 
+  --font-size-xxl: 2.5rem;
+  --font-size-xl: 2.1rem;
+  --font-size-lg: 1.75rem;
+  --font-size-md: 1.5rem;
   --font-size-base: 1.25rem;
   --font-size-paragraph: 0.9rem;
   --font-size-xs: 0.7rem;

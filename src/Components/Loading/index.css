@@ -8,8 +8,8 @@
 
 .app__loading-fixed {
   position: fixed;
-  width: 400px;
-  height: 400px;
+  max-width: 400px;
+  max-height: 400px;
   top: 15vh;
   left: calc(50vw - 200px);
 }

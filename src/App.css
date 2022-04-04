@@ -34,7 +34,7 @@
   overflow-wrap: break-word;
   max-width: fit-content;
   display: inline-block;
-  font-size: 35px;
+  font-size: var(--font-size-xl);
 }
 
 .margin__bottom {
@@ -55,9 +55,22 @@ p {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: var(--font-size-lg);
 }
 
 h4 {
-  font-size: 15px;
+  font-size: var(--font-size-md);
+}
+
+@media screen and (min-width: 650px) {
+  .section__title {
+    font-size: var(--font-size-xxl);
+  }
+  h3 {
+    font-size: var(--font-size-xl);
+  }
+
+  h4 {
+    font-size: var(--font-size-lg);
+  }
 }
