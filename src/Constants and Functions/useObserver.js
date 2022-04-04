@@ -19,7 +19,6 @@ const useObserver = (containerRef) => {
     const { current } = containerRef;
     if (current) {
       const test = Array.from(current.children);
-      console.table(test)
       const observer = new IntersectionObserver(intersectionCallBack, options);
       test.forEach((child) => {
         observer.observe(child);
