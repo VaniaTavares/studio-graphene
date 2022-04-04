@@ -5,7 +5,7 @@ import {
   MenuSection,
   PopularRecipesSection,
 } from "./Sections";
-import { Loading, Navigation, SectionTracker } from "./Components";
+import { Loading, Navigation, SectionTracker, Footer } from "./Components";
 import useObserver from "./Constants and Functions/useObserver";
 import "./App.css";
 
@@ -27,6 +27,7 @@ const App = () => {
         <MenuSection />
         <PopularRecipesSection tracker={tracker} />
       </div>
+      <Footer />
     </>
   );
 };

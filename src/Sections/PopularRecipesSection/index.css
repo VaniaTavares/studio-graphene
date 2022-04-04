@@ -32,7 +32,7 @@
   max-height: 400px;
   z-index: -10;
   position: absolute;
-  bottom: -15%;
+  bottom: -10%;
   right: 0;
   opacity: 0.5;
 }

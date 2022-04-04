@@ -5,3 +5,4 @@ export { default as SectionTracker } from "./SectionTracker";
 export { default as MenuColumn } from "./MenuColumn";
 export { default as Loading } from "./Loading";
 export { default as SectionTitle } from "./SectionTitle";
+export { default as Footer } from "./Footer";
