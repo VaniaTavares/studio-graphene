@@ -1,0 +1,18 @@
+{
+  "short_name": "Ours Food",
+  "name": "Ours Food Experience",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#fff",
+
+  "description": "Prototype for restaurant webpage"
+}
