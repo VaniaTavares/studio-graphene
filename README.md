@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/VaniaTavares/studio-graphene">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="public/favicon.ico" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Ours Food Experience</h3>
@@ -22,7 +22,7 @@
     <a href="https://github.com/VaniaTavares/studio-graphene"><strong>Explore the docs </strong></a>
     <br />
     <br />
-    <a href="https://github.com/VaniaTavares/studio-graphene">View Demo</a>
+    <a href="https://vaniatavares.github.io/studio-graphene" target="blank">View Demo</a>
     ·
     <a href="https://github.com/VaniaTavares/studio-graphene/issues">Report Bug</a>
     ·
@@ -57,9 +57,9 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
+<div align="center">
+<img src="public/home.png" alt="Logo" width="900" height="700">
+</div>
 Front end project developed with [Spooncular API](https://spoonacular.com/food-api) and a private API provided from a third party. The theme is a prototype for a restaurant webpage with Community, Menu and Random Recipes Sections.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -103,6 +103,7 @@ Having knowledge on use of npm or yarn.
 
 ## Usage
 
+[Live Website](https://vaniatavares.github.io/studio-graphene)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
@@ -136,7 +137,7 @@ Project Link: [https://github.com/VaniaTavares/studio-graphene](https://github.c
 
 ## Acknowledgments
 
-- [Studio Graphene]https://www.studiographene.com/)
+- [Studio Graphene](https://www.studiographene.com/)
 - [Image Shields](https://shields.io/)
 - [React Icons](https://react-icons.github.io/react-icons/search)
 
